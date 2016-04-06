@@ -98,6 +98,9 @@ links.forEach(function(link) {
                     texte = texte.replace(/\n/g,"");
                     texte = texte.replace(/\r/g,"");
                     var text = texte.match(/<article\s*>(.*)<\/article/);
+                    /*
+                     En cours de dev
+                    */
                     var article = document.createElement('article');
                     article.innerHTML = text[1].trim();
                     var price = getValue(article,'.price');
@@ -108,6 +111,9 @@ links.forEach(function(link) {
                     var livraison = getValue(article, '.livraison');
                     var image = getImg(article, '.contener_image_deal');
                     console.log(title,description,price,hot,infosup,livraison,image);
+                    /*
+                        Jusqu'ici
+                    */
                     container.innerHTML = text[1];
                     clearInterval(bePatient); 
                 } 
