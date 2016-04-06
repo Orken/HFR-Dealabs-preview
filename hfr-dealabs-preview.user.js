@@ -81,7 +81,7 @@ links.forEach(function(link) {
                     texte = texte.replace(/\n/g,"");
                     texte = texte.replace(/\r/g,"");
                     var text = texte.match(/<article\s*>(.*)<\/article/); 
-                    container.innerHTML = '<h1 style="color:red">ATTENTION Version alpha</h1>' + text[1];
+                    container.innerHTML = '<h3 style="color:red">ATTENTION Version alpha design dégueulasse</h3>' + text[1];
                     clearInterval(bePatient); 
                 } 
             }); 
