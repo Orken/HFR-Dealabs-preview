@@ -63,7 +63,7 @@ links.forEach(function(link) {
         container.style.width = "400px";
         container.style.minHeight = '175px';
         container.style.padding = "0px";
-        container.style.border = 'solid 2px #f56b2a'; 
+        container.style.border = 'solid 2px #02A5C1'; 
         container.style.top = window.scrollY+10+"px"; 
         container.style.right = "10px"; 
         container.style.fontFamily = 'sans-serif'; 
@@ -81,7 +81,7 @@ links.forEach(function(link) {
                     texte = texte.replace(/\n/g,"");
                     texte = texte.replace(/\r/g,"");
                     var text = texte.match(/<article\s*>(.*)<\/article/); 
-                    container.innerHTML = text[1];
+                    container.innerHTML = '<h1 style="color:red">ATTENTION Version alpha</h1>' + text[1];
                     clearInterval(bePatient); 
                 } 
             }); 
