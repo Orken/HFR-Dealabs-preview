@@ -1,6 +1,6 @@
 // ==UserScript== 
 // @name [HFR] Dealabs preview 
-// @version 0.1.1
+// @version 0.1.2
 // @namespace http://lbc2rss.superfetatoire.com/
 // @description Permet de voir une preview des deals sur Dealabs
 // @updateURL https://raw.githubusercontent.com/Orken/HFR-Dealabs-preview/master/hfr-dealabs-preview.user.js
@@ -34,6 +34,22 @@ var emptyElement = function (element) {
     while (element.firstChild) {
         element.removeChild(element.firstChild);
     }
+};
+
+var getValue = function (element, selector) {
+    var el = element.querySelector(selector);
+    if (el != null ) {
+        return el.innerText.trim();
+    }
+    return '';
+};
+var getImg = function (element, selector) {
+    var el = element.querySelector(selector + ' img');
+    console.log(el);
+    if (el != null ) {
+        return el.src;
+    }
+    return '';
 };
 
 GM_addStyle(css);
@@ -81,7 +97,17 @@ links.forEach(function(link) {
                     var texte = response.responseText; 
                     texte = texte.replace(/\n/g,"");
                     texte = texte.replace(/\r/g,"");
-                    var text = texte.match(/<article\s*>(.*)<\/article/); 
+                    var text = texte.match(/<article\s*>(.*)<\/article/);
+                    var article = document.createElement('article');
+                    article.innerHTML = text[1].trim();
+                    var price = getValue(article,'.price');
+                    var hot = getValue(article,'.temperature_div');
+                    var title = getValue(article,'#title_contener h1');
+                    var description = getValue(article,'.description');
+                    var infosup = getValue(article, '.info_sup');
+                    var livraison = getValue(article, '.livraison');
+                    var image = getImg(article, '.contener_image_deal');
+                    console.log(title,description,price,hot,infosup,livraison,image);
                     container.innerHTML = text[1];
                     clearInterval(bePatient); 
                 } 
