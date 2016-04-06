@@ -3,13 +3,12 @@
 // @version 0.1.0alpha
 // @namespace http://lbc2rss.superfetatoire.com/
 // @description Permet de voir une preview des deals sur Dealabs
-// @updateURL https://raw.githubusercontent.com/Orken/HFR-Leboncoin-preview/master/hfr-leboncoin-preview.user.js
-// @downloadURL https://raw.githubusercontent.com/Orken/HFR-Leboncoin-preview/master/hfr-leboncoin-preview.user.js
-// @supportURL https://github.com/Orken/HFR-Leboncoin-preview/issues
+// @updateURL https://raw.githubusercontent.com/Orken/HFR-Leboncoin-preview/master/hfr-dealabs-preview.user.js
+// @downloadURL https://raw.githubusercontent.com/Orken/HFR-Leboncoin-preview/master/hfr-dealabs-preview.user.js
+// @supportURL https://github.com/Orken/HFR-Dealabs-preview/issues
 // @include http://forum.hardware.fr/* 
-// @homepage https://github.com/Orken/HFR-Leboncoin-preview
+// @homepage https://github.com/Orken/HFR-Dealabs-preview
 // @author Orken | Mr Marron Derriere
-// @icon http://lbc2rss.superfetatoire.com/webroot/img/icon.png
 // @grant GM_xmlhttpRequest
 // @grant GM_addStyle
 // ==/UserScript== 
